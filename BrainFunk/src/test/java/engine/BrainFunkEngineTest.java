@@ -1,24 +1,23 @@
-package com.akki.brainfunk.engine;
+package engine;
 
+import com.akki.brainfunk.engine.BrainFunkEngine;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
 
 /**
  * Test class for {@link BrainFunkEngine}
  */
 public class BrainFunkEngineTest {
 
-    BrainFunkEngine engine;
-    ByteArrayOutputStream stream;
+    private BrainFunkEngine engine;
+    private ByteArrayOutputStream stream;
 
     @Test
     public void interpret() throws Exception {
         stream = new ByteArrayOutputStream();
-        engine = new BrainFunkEngine(4,stream);
+        engine = new BrainFunkEngine(5,stream);
 
         String input = " ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
         engine.interpret(input);

@@ -7,7 +7,7 @@ import java.io.File;
  */
 public interface ScriptEngine {
 
-    final static long MAX_INSTRUCTION_CYCLE = 1000000;
+    long MAX_INSTRUCTION_CYCLE = 1000000;
 
     void interpret(File file) throws Exception;
 

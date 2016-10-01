@@ -125,11 +125,10 @@ public class BrainFunkEngine implements ScriptEngine {
      * @param file The file to interpret.
      * @throws Exception
      */
-    @Override
     public void interpret(File file) throws Exception {
         fileReader = new BufferedReader(new FileReader(file));
         String content = "";
-        String line = "";
+        String line;
         while ((line = fileReader.readLine()) != null) {
             content += line;
             lineCount++;
@@ -143,7 +142,6 @@ public class BrainFunkEngine implements ScriptEngine {
      * @param str The string to interpret.
      * @throws Exception
      */
-    @Override
     public void interpret(String str) throws Exception {
         for (; charPointer < str.length(); charPointer++) {
             interpret(str.charAt(charPointer), str.toCharArray());
